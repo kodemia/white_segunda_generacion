@@ -1,0 +1,20 @@
+{
+  "mentors": [
+    {
+      "name": "David",
+      "age": 21
+    }
+  ],
+  "koders": [
+    {
+      "name": "Memo",
+      "age": 0
+    }
+  ],
+  "courses": [
+    {
+      "name": "node",
+      "hours": 40
+    }
+  ]
+}
