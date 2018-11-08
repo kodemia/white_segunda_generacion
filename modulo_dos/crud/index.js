@@ -1,3 +1,5 @@
+
+const fs = require('fs')
 const express = require('express')
 const app = express()
 
@@ -10,7 +12,7 @@ app.use(express.json())
 app.use('/koders', koderRoutes)
 
 app.get('/mentors', (req, resp) => {
-  console.log('mentors')
+  console.log('query: ', req.query)
   resp.json({
     success: true,
     message: 'DONE!',
@@ -23,6 +25,9 @@ app.post('/mentors', (req, resp) => {
   const newMentor = { name, age }
 
   data.mentors = [ ...data.mentors, newMentor ]
+
+  fs.writeFileSync('data.json', JSON.stringify(data), 'utf8')
+  data = fs.readFileSync('./data.json')
 
   resp.json({
     success: true,

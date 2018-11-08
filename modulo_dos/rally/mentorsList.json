@@ -1,0 +1,24 @@
+{
+  "mentors": [
+    {
+      "name": "David",
+      "course": "React"
+    },
+    {
+      "name": "Charles",
+      "course": "Node"
+    },
+    {
+      "name": "Isra",
+      "course": "Fronted"
+    },
+    {
+      "name": "Kevin",
+      "course": "Cloud"
+    },
+    {
+      "name": "Caro",
+      "course": "Branding"
+    }
+  ]
+}
