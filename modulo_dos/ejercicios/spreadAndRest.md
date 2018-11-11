@@ -8,7 +8,9 @@ Nota: obviamente todos estos ejercicios deben realizarse usando el operado sprea
 
 
 Recusros: 
-- [MDN web docs](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/Spread_operator)
+- [Spread MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/Spread_operator)
+- [Rest MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/Destructuring_assignment)
+- [Deconstruccion](https://wesbos.com/destructuring-objects/)
 ---
 
 ## Objetos
