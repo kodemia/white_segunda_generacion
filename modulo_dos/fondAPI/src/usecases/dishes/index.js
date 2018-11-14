@@ -6,11 +6,23 @@ async function get() {
 }
 
 async function create( dishData ) {
+  const existingDishes = await Dish.find({ ...dishData }).exec()
+
+  const dishExists = existingDishes.length > 0
+
+  if (dishExists) throw new Error('Dish already exists')
+
   const dish = new Dish(dishData)
-  // TODO: implementar [ TAREA ]
-  // https://mongoosejs.com/docs/models.html#constructing-documents
+  const dishCreated = await dish.save()
+  return dishCreated
+}
+
+function del (id) {
+  return Dish.findByIdAndDelete(id).exec()
 }
 
 module.exports = {
-  get
+  get,
+  create,
+  del
 }

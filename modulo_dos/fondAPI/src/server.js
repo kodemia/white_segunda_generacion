@@ -4,6 +4,8 @@ const dish = require('./usecases/dishes')
 
 const app = express()
 
+app.use(express.json())
+
 app.get('/', (req, res) => {
   orders.get()
   res.json({
@@ -24,7 +26,48 @@ app.get('/dishes', async (req, res) => {
 })
 
 app.post('/dishes', async (req, res) => {
-  // TODO: implementar [ TAREA ]
+  try {
+    const dishData = req.body
+    console.warn(' dishData: ', dishData)
+    const newDish = await dish.create(dishData)
+    res.json({
+      success: true,
+      message: 'New dish created',
+      payload: { dish: newDish }
+    })
+  } catch (error) {
+    res.status(400)
+    res.json({
+      success: false,
+      message: 'Dish could not be created',
+      error: [
+        error
+      ]
+    })
+  }
+
+})
+
+app.delete('/dishes/:id', async (req, res) => {
+  try {
+    const { id } = req.params
+    const dishDeleted = await dish.del(id)
+
+    res.json({
+      success: true,
+      message: 'Dish deleted',
+      payload: { dish: dishDeleted }
+    })
+  } catch (error) {
+    res.status(400)
+    res.json({
+      success: false,
+      message: 'Dish could not be deleted',
+      error: [
+        error
+      ]
+    })
+  }
 })
 
 module.exports = app
