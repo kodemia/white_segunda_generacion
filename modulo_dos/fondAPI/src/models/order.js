@@ -1,4 +1,6 @@
-const { Schema, model: Model } = require('mongoose')
+const mongoose = require('mongoose')
+
+const { Schema } = mongoose
 
 const schema = new Schema({
   dishes: {
@@ -28,6 +30,7 @@ const schema = new Schema({
   }
 })
 
-const model = Model(schema)
-
-module.exports = { schema, model }
+module.exports = { 
+  schema,
+  model: mongoose.model('Order', schema) 
+}
