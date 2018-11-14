@@ -5,7 +5,8 @@ const { Schema } = mongoose
 const schema = new Schema({
   dishes: {
     type: [String],
-    required: true
+    required: true,
+    minlength: 1
   },
   name: {
     type: String,

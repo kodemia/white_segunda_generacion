@@ -21,8 +21,13 @@ function del (id) {
   return Dish.findByIdAndDelete(id).exec()
 }
 
+function getById (id) {
+  return Dish.findById(id).exec()
+}
+
 module.exports = {
   get,
   create,
-  del
+  del,
+  getById
 }
