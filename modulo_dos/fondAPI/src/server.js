@@ -4,11 +4,13 @@ const app = express()
 
 const dishesRoutes = require('./routes/dishes')
 const ordersRoutes = require('./routes/orders')
+const authRoutes = require('./routes/auth')
 
 app.use(express.json())
 
 app.use('/dishes', dishesRoutes)
 app.use('/orders', ordersRoutes)
+app.use('/auth', authRoutes)
 
 app.get('/', (req, res) => {
   orders.get()
