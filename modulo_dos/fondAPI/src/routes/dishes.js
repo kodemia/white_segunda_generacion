@@ -3,8 +3,9 @@ const express = require('express')
 const router = express.Router()
 
 const dish = require('../usecases/dishes')
+const auth = require('../middlewares/auth')
 
-router.get('/', async (req, res) => {
+router.get('/', auth, async (req, res) => {
   const dishes = await dish.get()
   res.json({
     success: true,
@@ -15,8 +16,9 @@ router.get('/', async (req, res) => {
   })
 })
 
-router.post('/', async (req, res) => {
+router.post('/', auth, async (req, res) => {
   try {
+    console.warn('user: ', req.user)
     const dishData = req.body
     console.warn(' dishData: ', dishData)
     const newDish = await dish.create(dishData)
