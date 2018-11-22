@@ -5,7 +5,10 @@ const router = express.Router()
 const dish = require('../usecases/dishes')
 const auth = require('../middlewares/auth')
 
-router.get('/', auth, async (req, res) => {
+// para usar auth en todas las rutas del router
+//router.use(auth)
+
+router.get('/', async (req, res) => {
   const dishes = await dish.get()
   res.json({
     success: true,
@@ -18,7 +21,7 @@ router.get('/', auth, async (req, res) => {
 
 router.post('/', auth, async (req, res) => {
   try {
-    console.warn('user: ', req.user)
+    console.warn('user: ', req.state.user)
     const dishData = req.body
     console.warn(' dishData: ', dishData)
     const newDish = await dish.create(dishData)

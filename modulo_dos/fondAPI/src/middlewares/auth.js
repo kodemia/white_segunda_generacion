@@ -1,7 +1,10 @@
 const jwt = require('../lib/jwt')
 
 module.exports = async (req, res, next) => {
-  req.state.user = 'charles'
+  req.state = {
+    ...req.state,
+    user: 'charles'
+  }
   if ('authorization' in req.headers) {
     try {
       let validJwt = await jwt.verify(req.headers.authorization)
