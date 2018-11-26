@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css"/>
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+
+
+    <!-- React, ReactDOM -->
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <!-- Necesario para jsx -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+
+
+        // Hello word
+
+        // ReactDOM.render(
+        //   React.createElement(
+        //     'h1',
+        //     null,
+        //     'Bienvenidos al Modulo 3'
+        //   ),
+        //   document.getElementById('root')
+        // )
+
+        // Como harian esta estructura en React?
+        // <div>
+        //   <h1>Hola Mundo desde React</h1>
+        // </div>
+
+        // styles in react
+        // ReactDOM.render(
+        //   React.createElement(
+        //     'h1',
+        //     { className: "title" },
+        //     'Bienvenidos al Modulo 3'
+        //   ),
+        //   document.getElementById('root')
+        // )
+
+
+        // imaginense crear esta estructura
+        // <div class="container">
+        //   <figure>
+        //     <img src="" alt=""/>
+        //   </figure>
+        //   <div className="content">
+        //     <p>Holaa <strong>Koders</strong> </p>
+        //   </div>
+        // </div>
+
+
+
+        // JSX --> HTML with superpowers
+
+
+        // Hola Mundo con JSX
+        // const name = 'Pedro';
+        // const element = <h1>Hola { name }</h1>
+        // React.render(
+        //     element,
+        //     document.getElementById('root')
+        // )
+
+
+        // Con funciones
+        // function presentation() {
+        //   return `Hola soy ${ user.name } y tengo ${ user.age } años`;
+        // }
+        //
+        // const user = {
+        //   name: "Pedro",
+        //   age: 27
+        // }
+        //
+        // const element = <p>{ presentation() }</p>
+        // React.render(
+        // element,
+        // document.getElementById('root')
+        // )
+
+
+        // DOGS --> iterar un array para construir elementos html
+        // const dogs = [
+        //   {
+        //     breed: "Basset Hound",
+        //     img: "https://lh3.googleusercontent.com/-FE6jaswXbck/TY50RqxK5HI/AAAAAAAAHIQ/LpgLTxj2YG0/s1600/BASSETT-HOUND-BEACH-FACE.jpg"
+        //   },
+        //   {
+        //     breed: "Basset Hound",
+        //     img: "https://lh3.googleusercontent.com/-FE6jaswXbck/TY50RqxK5HI/AAAAAAAAHIQ/LpgLTxj2YG0/s1600/BASSETT-HOUND-BEACH-FACE.jpg"
+        //   },
+        //   {
+        //     breed: "Basset Hound",
+        //     img: "https://lh3.googleusercontent.com/-FE6jaswXbck/TY50RqxK5HI/AAAAAAAAHIQ/LpgLTxj2YG0/s1600/BASSETT-HOUND-BEACH-FACE.jpg"
+        //   }
+        // ]
+
+        // const buildDogs = dogs.map((dog, i) => {
+        //   return (
+        //     <div key={i}>
+        //       <h1> { dog.breed } </h1>
+        //       <img src={ dog.img } alt={ dog.breed }/>
+        //     </div>
+        //   )
+        // });
+ 
+        // ReactDOM.render(
+        //   <div>
+        //     {buildDogs}
+        //   </div>,
+        //   document.getElementById('root')
+        // )
+
+     
+
+        // Clock ----->
+
+        // function tick() {
+        //     const element = (
+        //         <div>
+        //             <h1 className="title">Hello, world!</h1>
+        //             <h2 className="title">It is {new Date().toLocaleTimeString()}.</h2>
+        //         </div>
+        //     );
+        // ReactDOM.render(element, document.getElementById('root'));
+        // }
+
+ 
+    </script>
+</body>
+</html>
