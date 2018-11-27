@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="root"></div>
+
+    <!-- React, ReactDOM -->
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <!-- Necesario para jsx -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+
+      const app = document.getElementById('root');
+      const Component = React.Component
+      const animalsObj = {
+        'cats':[
+          {
+            'name': 'Mushi',
+            'breed': 'Criollo',
+            'human': 'Raquel'
+          },
+          {
+            'name': 'Milo',
+            'breed': 'Americano',
+            'human': 'Rosa'
+          }
+        ],
+        'dogs':[
+          {
+            'name': 'Hachi',
+            'breed': 'Maltes',
+            'human': 'Memo'
+          },
+          {
+            'name': 'Cheeka',
+            'breed': 'Boxer',
+            'human': 'Manuel'
+          }
+        ]
+      }
+
+      class AnimalTr extends Component {
+        render() {
+          return (
+            <tr>
+              <td>{this.props.name}</td>
+              <td>{this.props.breed}</td>
+              <td>{this.props.human}</td>
+            </tr>
+          );
+        }
+      }
+
+      class AnimalTitle extends Component {
+        render() {
+          return <h2>{this.props.title}</h2>;
+        }
+      }
+
+      class Animal extends Component {
+        render() {
+          let { array, title } = this.props;
+          let animals = array.map((animal, index) => {
+            let { name, breed, human } = animal;
+            return <AnimalTr key={`animal${name}${index}`} name={name} breed={breed} human={human}></AnimalTr>;
+          });
+          return(
+            <div>
+              <AnimalTitle title={title}></AnimalTitle>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Breed</th>
+                    <th>Human</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  { animals }
+                </tbody>
+              </table>
+            </div>
+          );
+        }
+      }
+
+      class App extends Component {
+        render() {
+          let { cats, dogs } = animalsObj;
+          return(
+            <div>
+              <div>
+                <Animal array={dogs} title="Dogs"></Animal>
+                <Animal array={cats} title="Cats"></Animal>
+              </div>
+
+            </div>
+          );
+        }
+      }
+
+      ReactDOM.render(
+        <App/>,
+        app
+      )
+
+
+
+
+
+
+
+      // const dom = document.getElementById('root');
+      // const Component = React.Component;
+
+      // Como función
+      // const Saludar = (props) => <h1>Hola {props.name}</h1>;
+
+      // Como clase, el componente tiene más caracteristicas
+      // class Saludar extends React.Component {
+      //   render() {
+      //     return  <h1>Hola {this.props.name}</h1>;
+      //   }
+      // }
+      //
+      // ReactDOM.render(
+      //   <div>
+      //     <Saludar name="Isra"></Saludar>
+      //     <Saludar name="Leo"></Saludar>
+      //     <Saludar name="Charles"></Saludar>
+      //   </div>,
+      //   dom
+      // )
+
+      // Composing components
+      // class Saludar extends React.Component {
+      //   render () {
+      //     return <h1>Hola { this.props.name }</h1>
+      //   }
+      // }
+      //
+      // class App extends React.Component {
+      //   render() {
+      //     return(
+      //       <div className="App">
+      //         <Saludar name="Charles"></Saludar>
+      //         <Saludar name="Isra"></Saludar>
+      //         <Saludar name="David"></Saludar>
+      //       </div>
+      //     )
+      //   }
+      // }
+
+      // ReactDOM.render(
+      //   <App />,
+      //   dom
+      // )
+
+
+      // Ejercicio
+      // Que el componente Saludar ahora me retorne
+      // Hola soy {name} y mi mascota es {mascota}
+      // USTEDES ESTRUCTUREN SU INFORMACION
+
+      // class Animal extends Component {
+      //   render() {
+      //     return(
+      //       <div>
+      //         <h1>Dogs</h1>
+      //         <table>
+      //           <thead>
+      //             <tr>
+      //               <th>Name</th>
+      //               <th>Breed</th>
+      //               <th>Human</th>
+      //             </tr>
+      //           </thead>
+      //           <tbody>
+      //             <tr>
+      //               <td>Sr. Peabody</td>
+      //               <td>Fili</td>
+      //               <td>Cecilio</td>
+      //             </tr>
+      //           </tbody>
+      //         </table>
+      //       </div>
+      //     )
+      //   }
+      // }
+      //
+      // class App extends Component {
+      //   render() {
+      //     return (
+      //       <div>
+      //         <Animal></Animal>
+      //         <Animal></Animal>
+      //       </div>
+      //     );
+      //   }
+      // }
+      //
+      // ReactDOM.render(
+      //   <App/>,
+      //   dom
+      // )
+
+
+    </script>
+</body>
+</html>
