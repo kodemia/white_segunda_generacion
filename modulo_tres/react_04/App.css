@@ -1,0 +1,24 @@
+.App {
+  text-align: center;
+}
+
+.btn {
+  /* color: white; */
+  width: 80px;
+  height: 30px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btnLogin {
+  color: #4b90f9;
+}
+
+.btnLogout {
+  color: #204173;
+}
