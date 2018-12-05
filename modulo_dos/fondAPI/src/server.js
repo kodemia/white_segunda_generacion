@@ -16,7 +16,6 @@ app.use('/auth', authRoutes)
 app.use('/users', userRoutes)
 
 app.get('/', (req, res) => {
-  orders.get()
   res.json({
     success: true,
     message: 'FondAPI running'
