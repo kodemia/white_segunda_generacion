@@ -1,0 +1,52 @@
+.App-Register {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.App-Register h1 {
+  color: white;
+  font-size: 60px;
+}
+
+.App-Register form {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: flex-end;
+}
+
+.App-Register form input {
+  height: 60px;
+  width: 400px;
+  font-size: 24px;
+  text-align: center;
+  border: 0;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  color: #8a8a8a;
+}
+
+.App-Register form input:focus {
+  outline-color: #6A799B;
+}
+
+.App-Register form button[type="submit"] {
+    height: 50px;
+    width: 130px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    background: #6A799B;
+    color: white;
+    border: 0;
+    border-radius: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.App-Register form button[type="submit"]:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
