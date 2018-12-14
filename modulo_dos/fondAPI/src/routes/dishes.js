@@ -47,6 +47,8 @@ router.delete('/:id', async (req, res) => {
     const { id } = req.params
     const dishDeleted = await dish.del(id)
 
+    if(!dishDeleted) throw new Error('Dish not exists!')
+
     res.json({
       success: true,
       message: 'Dish deleted',
